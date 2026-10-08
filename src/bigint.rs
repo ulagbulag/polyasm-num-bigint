@@ -1197,6 +1197,7 @@ impl BigInt {
     }
 }
 
+#[cfg(not(target_abi = "polyasm"))]
 impl num_traits::FromBytes for BigInt {
     type Bytes = [u8];
 
@@ -1209,6 +1210,7 @@ impl num_traits::FromBytes for BigInt {
     }
 }
 
+#[cfg(not(target_abi = "polyasm"))]
 impl num_traits::ToBytes for BigInt {
     type Bytes = Vec<u8>;
 
